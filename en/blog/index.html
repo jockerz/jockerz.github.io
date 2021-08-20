@@ -1,0 +1,12 @@
+---
+layout: news
+title: Blog
+permalink: /en/blog/
+author: all
+---
+
+{% for post in site.posts %}
+  {% if post.en == 1 %}
+    {% include news_item.html %}
+  {% endif %}
+{% endfor %}

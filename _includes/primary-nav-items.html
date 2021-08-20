@@ -1,0 +1,47 @@
+<ul>
+  <li class="{% if page.overview %}current{% endif %}">
+    {% if page.url contains '/en/' %}
+    <a href="/en/">Home</a>
+    {% else %}
+    <a href="/">Depan</a>
+    {% endif %}
+  </li>
+<!--
+  <li class="{% if page.url contains '/docs/' %}current{% endif %}">
+    {% if page.url contains '/en/' %}
+    <a href="/en/docs/">Docs</a>
+    {% else %}
+    <a href="/docs/">Docs</a>
+    {% endif %}
+  </li>
+-->
+  <li class="{% if page.author %}current{% endif %}">
+    <a href="{% if page.url contains '/en/' %}/en{% endif %}/blog/">Blog</a>
+  </li>
+  <li class="{% if page.url contains '/tentang/' %}current{% endif %}">
+    {% if page.url contains '/en/' %}
+    <a href="/en/tentang/">About</a>
+    {% else %}
+    <a href="/tentang/">Tentang</a>
+    {% endif %}
+  </li>
+  <li class="lang">
+    {% if page.en_url == nil and page.id_url == nil %}
+      {% if page.url contains '/en/' %}
+      <a class="active">EN</a>
+      <a href="{{ page.url | remove_first: '/en' }}">ID</a>
+      {% else %}
+      <a href="/en{{ page.url }}">EN</a>
+      <a class="active">ID</a>
+      {% endif %}
+    {% else %}
+      {% if page.en_url %}
+      <a href="/blog{{ page.en_url }}">EN</a>
+      <a class="active">ID</a>
+      {% elsif page.id_url %}
+      <a class="active">EN</a>
+      <a href="/blog{{ page.id_url }}">ID</a>
+      {% endif %}
+    {% endif %}
+  </li>
+</ul>

@@ -1,0 +1,30 @@
+<div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the blog…</option>
+    <option value="/">Home</option>
+    <optgroup label="v1.x">
+    {% for post in site.posts %}
+      {% if page.en == 1 and post.en == 1 %}
+        <option value="{{ post.url }}">{{ post.title }}</option>
+        {% continue %}
+      {% elsif page.en != 1 and post.en != 1 %}
+      {% if page.url contains '/en/' %}{% continue %}{% endif %}
+        <option value="{{ post.url }}">{{ post.title }}</option>
+        {% continue %}
+      {% endif %}
+
+      {% unless page.id_url or page.en_url %}
+        {% if page.url contains '/en/' and post.en == 1 %}
+          <option value="{{ post.url }}">{{ post.title }}</option>
+          {% continue %}
+        {% endif %}
+
+        {% unless page.url contains '/en/' %}{% if post.en != 1 %}
+          <option value="{{ post.url }}">{{ post.title }}</option>
+        {% endif %}{% endunless %}
+      {% endunless %}
+
+    {% endfor %}
+    </optgroup>
+  </select>
+</div>

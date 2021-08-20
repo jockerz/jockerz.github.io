@@ -1,0 +1,54 @@
+sass:
+  style: compressed
+
+repository: https://github.com/jockerz/jockerz.github.io
+timezone: Asia/Jakarta
+
+defaults:
+  -
+    scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: "docs"
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "news_item"
+      image: /img/twitter-card.png
+  -
+    scope:
+      path: "_tutorials"
+      type: "tutorials"
+    values:
+      layout: "tutorials"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:title/
+    output: true
+  tutorials:
+    output: true
+
+shortname: Jockerz
+name: Jockerz @ Github.io
+description: Deskripsi
+url: URL
+
+twitter:
+  username: jekyllrb
+
+logo: /img/logo-2x.png
+
+
+exclude:
+  - .gitignore
+  - CNAME
+  - icomoon-selection.json
+  - readme.md
+  - dump

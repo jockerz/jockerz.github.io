@@ -1,0 +1,37 @@
+<div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <h4>Recent Posts</h4>
+    <ul>
+        {% for post in site.posts limit:5 %}
+
+          {% if page.en == 1 and post.en == 1 %}
+          <li class="{% if page.title == post.title %}current{% endif %}">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% continue %}
+          {% elsif page.en != 1 and post.en != 1 %}
+          {% if page.url contains '/en/' %}{% continue %}{% endif %}
+          <li class="{% if page.title == post.title %}current{% endif %}">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% continue %}
+          {% endif %}
+
+          {% unless page.id_url or page.en_url %}
+            {% if page.url contains '/en/' and post.en == 1 %}
+            <li class="{% if page.title == post.title %}current{% endif %}">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+              {% continue %}
+            {% endif %}
+            {% unless page.url contains '/en/' %}{% if post.en != 1 %}
+              <li class="{% if page.title == post.title %}current{% endif %}">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              </li>
+            {% endif %}{% endunless %}
+          {% endunless %}
+
+        {% endfor %}
+    </ul>
+  </aside>
+</div>
