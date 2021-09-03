@@ -2,7 +2,7 @@
 title: Debian Server Setup for HTTP
 description: "First Step for Debian Server set up for HTTP Server"
 date: 2021-09-02 12:34:56
-id_url: "#"
+id_url: "/langkah-pertama-debian-server"
 en: 1
 categories: [linux]
 ---
@@ -11,6 +11,10 @@ categories: [linux]
 After install Debian from ISO file, first step we gonna do are:
 
  - Set APT repository list
+ - Install Initial Packages
+ - Install Helper Package
+ - Install Server Services Package
+
 
 ## Set APT Repository List
 
@@ -28,10 +32,10 @@ deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
 deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
 ```
 
-Then fetch repository updates.
+Then fetch repository updates and upgrade.
 
 ```shell
-apt update
+apt update && apt upgrade
 ```
 
 ## Install Initial Packages
@@ -70,7 +74,7 @@ Add `sudo` user. The `sudo` command might take effect after restart.
 adduser <YOUR_USERNAME> sudo
 ```
 
-## Helper Package
+## Install Helper Package
 
  - `htop`: Enhanced process viewer similar to top
  - `tmux`: Terminal multiplexer
@@ -79,7 +83,7 @@ adduser <YOUR_USERNAME> sudo
 apt install htop tmux
 ```
 
-## Server Services Package
+## Install Server Services Package
 
 This packages is based on your needs on the server.
 For introduction this packages might be useful on your server.
@@ -98,9 +102,14 @@ ufw allow "Nginx Full"
 
 ## Optional: Python Dev Packages to run Python Services
 
+This packages will userful to set this server up for Python Web Application.
+
 ```shell
 apt install python3-dev libssl-dev
 ```
+
+Other than Python services, you might install the additional packages based on you service requirements.
+
 
 ## Clean APT Caches
 
