@@ -3,9 +3,12 @@ layout: page
 title: Topik
 ---
 
+## Penulis
+
+- Repositori: [github.com/jockerz]: https://github.com/jockerz
 
 
-### Petunjuk
+## Petunjuk
 
 Pada tulisan blog maupun tutorial akan dijumpai petunjuk-petunjuk sebagai berikut:
 
