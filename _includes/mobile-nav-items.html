@@ -1,6 +1,6 @@
 <ul>
   <li class="{% if page.overview %}current{% endif %}">
-    {% if page.url contains '/en/' %}
+    {% if page.url contains '/en/' or page.en == 1 %}
     <a href="/en/">Home</a>
     {% else %}
     <a href="/">Depan</a>
@@ -12,10 +12,10 @@
   </li>
 -->
   <li class="{% if page.url contains '/blog/' %}current{% endif %}">
-    <a href="{% if page.url contains '/en/' %}/en{% endif %}/blog/">Blog</a>
+    <a href="{% if page.url contains '/en/' or page.en == 1 %}/en{% endif %}/blog/">Blog</a>
   </li>
   <li class="{% if page.url contains '/tentang/' %}current{% endif %}">
-    {% if page.url contains '/en/' %}
+    {% if page.url contains '/en/' or page.en == 1 %}
     <a href="/en/tentang/">About</a>
     {% else %}
     <a href="/tentang/">Tentang</a>
@@ -32,11 +32,11 @@
       {% endif %}
     {% else %}
       {% if page.en_url %}
-      <a href="/blog{{ page.en_url }}">EN</a>
+      <a href="{% if page.en_url == '#' %}#{% else %}/blog{{ page.en_url }}{% endif %}">EN</a>
       <a class="active">ID</a>
       {% elsif page.id_url %}
       <a class="active">EN</a>
-      <a href="/blog{{ page.id_url }}">ID</a>
+      <a href="{% if page.id_url == '#' %}#{% else %}/blog{{ page.id_url }}{% endif %}">ID</a>
       {% endif %}
     {% endif %}
   </li>
