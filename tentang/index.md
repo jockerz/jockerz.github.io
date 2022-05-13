@@ -5,7 +5,7 @@ title: Topik
 
 ## Penulis
 
-- Repositori: [github.com/jockerz]: https://github.com/jockerz
+- Repositori: [github.com/jockerz](https://github.com/jockerz)
 
 
 ## Petunjuk
