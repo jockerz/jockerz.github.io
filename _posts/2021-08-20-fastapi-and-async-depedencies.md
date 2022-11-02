@@ -149,7 +149,7 @@ Now lets run the API.
 uvicorn main:app --lifespan on  # --port 8001
 ```
 
-Now we can access and test our API using `Swagger UI` on http://127.0.0.1:8000/docs
+Now we can access and test our API using `Swagger UI` on [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 
 ## Test

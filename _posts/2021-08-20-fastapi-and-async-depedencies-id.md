@@ -146,7 +146,7 @@ Lalu jalankan.
 uvicorn main:app --lifespan on  # --port 8001
 ```
 
-Jika sudah berjalan normar, kita bisa akses `UI Swagger`-nya di http://127.0.0.1:8000/docs
+Jika sudah berjalan normar, kita bisa akses `UI Swagger`-nya di [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 
 ## Test
