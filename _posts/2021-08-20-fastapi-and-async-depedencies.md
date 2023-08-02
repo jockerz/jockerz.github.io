@@ -13,10 +13,9 @@ categories: [python, fastapi]
   <p>The repository of complete code is available on the of of this post</p>
 </div>
 
-The main ide of this post is create the `async redis` instance on `startup event` so that we can use the `async / await` code.
+The main idea of this post is creating `async redis` instance on `startup event`,
+so that we can use the `async / await` code.
 Nevertheless we make sure that we can assign the `aioredis` instance on `create_app` function.
-
-We are going to make sure our actual redis data is disturbed by our test code.
 
 Now lets create Web API with [FastAPI][fastapi] with asynchronous dependencies with __[Redis][redis]__ using __[aioredis][aioredis]__ and __[fakeredis][fakeredis]__ for testing.
 

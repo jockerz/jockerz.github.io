@@ -11,7 +11,7 @@
  }
 
 body {
-  font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*  font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   font-family: 'Berkeley Mono', 'drewtype', monospace;
   color: #eee;
   background-color: #333;
@@ -110,7 +110,7 @@ nav, .meta {
     }
 
     &.lang {
-      font-size: 0.65em;
+      font-size: 0.75em;
       color: #eee;
       margin-left: 20px;
       
@@ -450,7 +450,7 @@ footer {
 article {
   background-color: #444;
   @include border-radius(10px);
-  padding: 20px;
+  padding: 14px;
   margin: 0 10px;
   @include box-shadow(0 3px 10px rgba(0,0,0,.1));
   font-size: 16px;
@@ -467,7 +467,7 @@ article {
 @media (min-width: 768px) {
   article {
     padding: 40px 40px 30px;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -494,6 +494,7 @@ aside {
 
   li {
     list-style-type: none;
+    padding-bottom: 10px;
 
     a {
       font-size: 16px;
@@ -965,7 +966,6 @@ code.output {
 
   p {
     font-weight: 400;
-    font-size: .75em;
   }
 
   &:after {
