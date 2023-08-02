@@ -3,6 +3,7 @@ title: Membuat Rangkaian Iptables
 description: "Rangkaian Iptables sederhana"
 date: 2022-05-13 12:34:56
 # en_url: "/basic-iptables-rule-chains/"
+disable_i18n: true
 categories: [linux, keamanan]
 ---
 

@@ -69,7 +69,7 @@ See `ufw` applied rules
 ufw status
 ```
 
-Add `sudo` user. The `sudo` command might take effect after restart.
+Add `sudo` user. The `sudo` command will take effect after restart.
 ```shell
 adduser <YOUR_USERNAME> sudo
 ```
@@ -86,7 +86,6 @@ apt install htop tmux
 ## Install Server Services Package
 
 This packages is based on your needs on the server.
-For introduction this packages might be useful on your server.
 
  - `nginx`: small, powerful, scalable web/proxy server
 
