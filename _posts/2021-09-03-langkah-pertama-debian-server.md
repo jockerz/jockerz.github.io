@@ -49,11 +49,6 @@ apt update && apt upgrade
 apt install net-tools openssh-server ufw apt-transport-https sudo
 ```
 
-Ijinkan dan jalankan `ufw`
-```shell
-ufw enable
-```
-
 Ijinkan koneksi SSH
 ```shell
 # See App list
@@ -61,6 +56,12 @@ ufw app list
 
 # Allow SSH
 ufw allow "SSH"
+```
+
+Ijinkan dan jalankan `ufw`
+```shell
+# Peringatan: pastikan SSH sudah diijinkan
+ufw enable
 ```
 
 Untuk melihat pengaturan firewall `ufw` yang sudah disimpan gunakan perintah `ufw status`.

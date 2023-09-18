@@ -50,11 +50,6 @@ apt update && apt upgrade
 apt install net-tools openssh-server ufw apt-transport-https sudo
 ```
 
-Enable UFW
-```shell
-ufw enable
-```
-
 Allow SSH Connection
 ```shell
 # See App list
@@ -62,6 +57,12 @@ ufw app list
 
 # Allow SSH
 ufw allow "SSH"
+```
+
+Enable UFW
+```shell
+# Warning: make sure you add "SSH" to allowed list first
+ufw enable
 ```
 
 See `ufw` applied rules
@@ -95,7 +96,7 @@ apt install nginx
 
 Firewall setting for `nginx`.
 ```shell
-# shortcut for `ufw allow "Nginx HTTP"` and `ufw allow "Nginx HTTPS"`
+# shortcut for `ufw allow "Nginx HTTP"` (port 80) and `ufw allow "Nginx HTTPS"` (port 443)
 ufw allow "Nginx Full"
 ```
 

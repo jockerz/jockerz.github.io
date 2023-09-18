@@ -96,7 +96,9 @@ Jadi kita akan buat perintah untuk mend-*drop* rangkaian aturan kita tadi.
 Parameter **iptables** yang kita gunakan adalah **`id`**, seperti berikut
 
 ```
+# Terima koneksi dari subnet 10.11.0.0/24
 iptables -D NAMA_RANGKAIAN -s 10.11.0.0/24 -j ACCEPT
+# Terima koneksi lokal
 iptables -D NAMA_RANGKAIAN -i lo -j ACCEPT
 iptables -D NAMA_RANGKAIAN -m conntrack --ctstate ESTABLISHED,RELATED \
     -j ACCEPT
