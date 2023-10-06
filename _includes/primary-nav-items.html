@@ -25,25 +25,28 @@
     <a href="/tentang/">Tentang</a>
     {% endif %}
   </li>
-  <li class="lang">
-    {% if page.disable_i18n != true %}
-      {% if page.en_url == nil and page.id_url == nil %}
-        {% if page.url contains '/en/' %}
-        <a class="active">EN</a>
-        <a href="{{ page.url | remove_first: '/en' }}">ID</a>
-        {% else %}
-        <a href="/en{{ page.url }}">EN</a>
-        <a class="active">ID</a>
-        {% endif %}
-      {% else %}
-        {% if page.en_url %}
-        <a href="{% if page.en_url == '#' %}#{% else %}/blog{{ page.en_url }}{% endif %}">EN</a>
-        <a class="active">ID</a>
-        {% elsif page.id_url %}
-        <a class="active">EN</a>
-        <a href="{% if page.id_url == '#' %}#{% else %}/blog{{ page.id_url }}{% endif %}">ID</a>
-        {% endif %}
-      {% endif %}
-    {% endif %}
+  <li class="{% if page.url contains '/tutorial' %}current{% endif %}">
+    <a href="/tutorial">{% if page.url contains '/en/' %}Tutorial Links{% else %}Link Tutorial{% endif %}</a>
   </li>
+  {% if page.disable_i18n != true %}
+  <li class="lang">
+  {% if page.en_url == nil and page.id_url == nil %}
+    {% if page.url contains '/en/' %}
+    <a class="active">EN</a>
+    <a href="{{ page.url | remove_first: '/en' }}">ID</a>
+    {% else %}
+    <a href="/en{{ page.url }}">EN</a>
+    <a class="active">ID</a>
+    {% endif %}
+  {% else %}
+    {% if page.en_url %}
+    <a href="{% if page.en_url == '#' %}#{% else %}/blog{{ page.en_url }}{% endif %}">EN</a>
+    <a class="active">ID</a>
+    {% elsif page.id_url %}
+    <a class="active">EN</a>
+    <a href="{% if page.id_url == '#' %}#{% else %}/blog{{ page.id_url }}{% endif %}">ID</a>
+    {% endif %}
+  {% endif %}
+  </li>
+  {% endif %}
 </ul>

@@ -225,7 +225,7 @@ h6:hover .header-link {
 
 footer {
   background-color: #212121;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 5px;
   color: #c0c0c0;
   margin-top: 40px;
@@ -453,7 +453,7 @@ article {
   padding: 14px;
   margin: 0 10px;
   @include box-shadow(0 3px 10px rgba(0,0,0,.1));
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (max-width: 480px) {
@@ -497,7 +497,7 @@ aside {
     padding-bottom: 10px;
 
     a {
-      font-size: 16px;
+      font-size: 14px;
       position: relative
     }
 
